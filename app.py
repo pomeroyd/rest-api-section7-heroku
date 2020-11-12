@@ -3,6 +3,7 @@
 #conda env list
 #https://towardsdatascience.com/manage-your-python-virtual-environment-with-conda-a0d2934d5195
 
+import os
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT # decorator
@@ -16,7 +17,7 @@ from resources.store import Store, StoreList
 print("---All Modules Loaded---")
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' #can be any type of databse type, mysql, sqlite, oracle
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db') #can be any type of databse type, mysql, sqlite, oracle
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jose' # if this was a production code, this key should not be publicly accessible.
 api = Api(app)
