@@ -15,3 +15,5 @@ This project creates a store with items using CRUD functions.
 ## Implementation
 
 Some details here 
+
+This is deployed on Heroku
