@@ -39,7 +39,7 @@ api.add_resource(UserRegister, '/register')
 
 
 
-db.init_app(app)
+
 
 #only run app if the program is __main__ and not a file that is being imported.
 if __name__ == '__main__':
