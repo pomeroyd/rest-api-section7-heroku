@@ -2,8 +2,4 @@ Flask
 Flask-RESTful
 Flask-JWT
 Flask-SQLAlchemy
-<<<<<<< HEAD
 uwsgi
-=======
-uwsgi
->>>>>>> fa9d6e2d3fbb7c343197c2d2f73504d4e9d2572f
