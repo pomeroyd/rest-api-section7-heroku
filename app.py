@@ -7,7 +7,7 @@ import os
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT # decorator
-
+from flask import render_template
 
 from security import authenticate, identity
 from resources.user import UserRegister
@@ -21,6 +21,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite://
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jose' # if this was a production code, this key should not be publicly accessible.
 api = Api(app)
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 
 
